@@ -5,7 +5,7 @@ import (
 	"path"
 	"time"
 
-	"github.com/go-redis/redis/v8"
+	"github.com/redis/go-redis/v9"
 )
 
 // NewRedisCache create a new redis cache manager instance
@@ -30,6 +30,13 @@ func NewRateLimiter(key string, maxAttempts uint32, ttl time.Duration, cache Cac
 	} else {
 		return limiter, nil
 	}
+}
+
+// NewRedisQueue create a new redis queue instance
+func NewRedisQueue(name string, opt redis.Options) Queue {
+	rq := new(rQueue)
+	rq.init(name, opt)
+	return rq
 }
 
 // NewVerificationCode create a new verification code manager instance

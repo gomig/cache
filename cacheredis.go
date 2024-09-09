@@ -5,9 +5,9 @@ import (
 	"errors"
 	"time"
 
-	"github.com/go-redis/redis/v8"
 	"github.com/gomig/caster"
 	"github.com/gomig/utils"
+	"github.com/redis/go-redis/v9"
 )
 
 type rCache struct {
@@ -29,7 +29,7 @@ func (rc rCache) perfixer(key string) string {
 }
 
 func (rc rCache) Put(key string, value any, ttl time.Duration) error {
-	if err := rc.client.SetEX(
+	if err := rc.client.SetEx(
 		context.TODO(),
 		rc.perfixer(key),
 		value,

@@ -201,6 +201,20 @@ Decrement(key string, value int64) (bool, error)
 err := rCache.Decrement("total-try", 1)
 ```
 
+## Create New Queue Driver
+
+```go
+func NewRedisQueue(name string, opt redis.Options) Queue
+```
+
+### Push
+
+Queue new item.
+
+### Pull
+
+Read first queue item.
+
 ## Create New Rate Limiter Driver
 
 **Note:** Rate limiter based on cache, For creating rate limiter driver you must pass a cache driver instance to constructor function.

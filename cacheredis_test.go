@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-redis/redis/v8"
 	"github.com/gomig/cache"
+	"github.com/redis/go-redis/v9"
 )
 
 func redisCache() cache.Cache {

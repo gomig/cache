@@ -3,9 +3,9 @@ module github.com/gomig/cache
 go 1.21
 
 require (
-	github.com/go-redis/redis/v8 v8.11.5
 	github.com/gomig/caster v1.0.0
 	github.com/gomig/utils v1.0.0
+	github.com/redis/go-redis/v9 v9.6.1
 )
 
 require (
